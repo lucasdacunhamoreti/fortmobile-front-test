@@ -10,6 +10,8 @@ Seu objetivo é criar um simples app que deve conter duas páginas, uma que exib
 * Telefone
 * Email
 
+É importante que você desenvolva as soluções usando seu conhecimento. ***Dito isto, não é necessário a realização de todas as tarefas, uma vez que o objetivo deste desafio não é te avaliar, e sim refletir seu conhecimento para a nossa equipe.***
+
 ### Instruções:
  - Deve ser possível criar, listar e excluir os dados cadastrados pelo formulário;
  - Fazer a persistência dos dados no localStorage;
