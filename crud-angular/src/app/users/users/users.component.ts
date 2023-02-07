@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from '../model/user';
 import { UsersService } from '../services/users.service';
 
@@ -8,16 +9,15 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  users: User[] = [
-    { _id: '1' ,name: 'Lucas', cpf: 11652685976, phoneNumber: 43996775847, email: 'lucasdacuna@email.com' }
-  ];
+  users$: Observable<User[]>;
+
   displayedColumns = ['name', 'cpf', 'phoneNumber', 'email' ];
 
   // usersService: UsersService;
 
   constructor(private usersService: UsersService ) {
     // this.usersService = new UsersService();
-    this.users = this.usersService.list();
+    this.users$ = this.usersService.list();
   }
 
   ngOnInit() {

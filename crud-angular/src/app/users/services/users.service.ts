@@ -6,11 +6,11 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class UsersService {
+  private readonly API = '/assets/users.json';
 
   constructor(private httpClient: HttpClient) { }
 
-  list(): User[] {
-    return [{ _id: '1' ,name: 'Lucas', cpf: 11652685976, phoneNumber: 43996775847, email: 'lucasdacuna@email.com' }];
-
+  list() {
+    return this.httpClient.get<User[]>(this.API);
   }
 }
