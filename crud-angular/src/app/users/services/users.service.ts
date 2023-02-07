@@ -13,4 +13,8 @@ export class UsersService {
   list() {
     return this.httpClient.get<User[]>(this.API);
   }
+
+  save(data: User) {
+    return this.httpClient.post<User>(this.API, data);
+  }
 }

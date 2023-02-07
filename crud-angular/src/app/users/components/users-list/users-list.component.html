@@ -1,0 +1,44 @@
+<mat-table [dataSource]="users">
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{ user.name }} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="cpf">
+    <mat-header-cell *matHeaderCellDef> CPF </mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{ user.cpf }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="phoneNumber">
+    <mat-header-cell *matHeaderCellDef> Phone Number </mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{ user.phoneNumber }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{ user.email }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef class="action-column">
+      <button mat-mini-fab color="accent" aria-label="Add a user">
+        <mat-icon (click)="onAdd()">add</mat-icon>
+      </button>
+    </mat-header-cell>
+
+    <mat-cell *matCellDef="let user" class="action-column">
+      <button mat-icon-button color="primary" aria-label="Edit a user">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button color="warn" aria-label="Edit a user">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
