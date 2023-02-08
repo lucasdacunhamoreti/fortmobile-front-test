@@ -10,6 +10,10 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) { }
 
+  loadById(id: number) {
+    this.httpClient.get<User>(`${this.API}/${id}`);
+  }
+
   list() {
     return this.httpClient.get<User[]>(this.API);
   }
