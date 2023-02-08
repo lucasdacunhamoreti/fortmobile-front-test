@@ -1,11 +1,9 @@
 <mat-table [dataSource]="users">
-  <!-- Name Column -->
   <ng-container matColumnDef="name">
     <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
     <mat-cell *matCellDef="let user"> {{ user.name }} </mat-cell>
   </ng-container>
 
-  <!-- Name Column -->
   <ng-container matColumnDef="cpf">
     <mat-header-cell *matHeaderCellDef> CPF </mat-header-cell>
     <mat-cell *matCellDef="let user"> {{ user.cpf }} </mat-cell>
