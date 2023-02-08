@@ -30,7 +30,7 @@
 
     <mat-cell *matCellDef="let user" class="action-column">
       <button mat-icon-button color="primary" aria-label="Edit a user">
-        <mat-icon>edit</mat-icon>
+        <mat-icon (click)="onEdit(user)">edit</mat-icon>
       </button>
 
       <button mat-icon-button color="warn" aria-label="Edit a user">

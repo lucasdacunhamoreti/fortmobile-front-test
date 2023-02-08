@@ -10,6 +10,7 @@ import { User } from '../../model/user';
 export class UsersListComponent implements OnInit {
   @Input() users: User[] = [];
   @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
 
   readonly displayedColumns = ['name', 'cpf', 'phoneNumber', 'email', 'actions' ];
 
@@ -17,6 +18,10 @@ export class UsersListComponent implements OnInit {
 
   onAdd() {
     this.add.emit(true);
+  }
+
+  onEdit(user: User) {
+    this.edit.emit(user);
   }
 
   ngOnInit() {

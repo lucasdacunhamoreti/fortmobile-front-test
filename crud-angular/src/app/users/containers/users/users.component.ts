@@ -40,6 +40,10 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['new'], { relativeTo: this.route });
   }
 
+  onEdit(user: User) {
+    this.router.navigate(['edit', user.id], { relativeTo: this.route });
+  }
+
   ngOnInit() {
   }
 

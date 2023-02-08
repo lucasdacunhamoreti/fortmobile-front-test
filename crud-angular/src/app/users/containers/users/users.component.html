@@ -8,6 +8,7 @@
     *ngIf="users$ | async as users; else loading"
     [users]="users"
     (add)="onAdd()"
+    (edit)="onEdit($event)"
     >
 
     </app-users-list>

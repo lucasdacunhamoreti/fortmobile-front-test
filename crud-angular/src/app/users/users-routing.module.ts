@@ -6,7 +6,8 @@ import { UserFormComponent } from './containers/user-form/user-form.component';
 
 const routes: Routes = [
   { path: '', component: UsersComponent },
-  { path: 'new', component: UserFormComponent }
+  { path: 'new', component: UserFormComponent },
+  { path: 'edit/:id', component: UserFormComponent }
 ];
 
 @NgModule({
