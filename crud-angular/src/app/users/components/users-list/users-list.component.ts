@@ -11,6 +11,7 @@ export class UsersListComponent implements OnInit {
   @Input() users: User[] = [];
   @Output() add = new EventEmitter(false);
   @Output() edit = new EventEmitter(false);
+  @Output() remove = new EventEmitter(false);
 
   readonly displayedColumns = ['name', 'cpf', 'phoneNumber', 'email', 'actions' ];
 
@@ -22,6 +23,10 @@ export class UsersListComponent implements OnInit {
 
   onEdit(user: User) {
     this.edit.emit(user);
+  }
+
+  onDelete(user: User) {
+    this.remove.emit(user);
   }
 
   ngOnInit() {

@@ -11,7 +11,7 @@ export class UsersService {
   constructor(private httpClient: HttpClient) { }
 
   loadById(id: number) {
-    this.httpClient.get<User>(`${this.API}/${id}`);
+    return this.httpClient.get<User>(`${this.API}/${id}`);
   }
 
   list() {
@@ -19,6 +19,21 @@ export class UsersService {
   }
 
   save(data: User) {
+    if (data.id) {
+      return this.update(data);
+    }
+    return this.create(data);
+  }
+
+  private create(data: User) {
     return this.httpClient.post<User>(this.API, data);
+  }
+
+  private update(data: User) {
+    return this.httpClient.put<User>(`${this.API}/${data.id}`, data);
+  }
+
+  remove(id: number) {
+    return this.httpClient.delete(`${this.API}/${id}`);
   }
 }

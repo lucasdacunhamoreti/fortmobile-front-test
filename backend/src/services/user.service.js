@@ -18,9 +18,25 @@ const post = async (userData) => {
 }
 
 const getOne = async (id) => {
-    const result = await User.findOne({
-        id
-    });
+    const result = await User.findOne({ where: { id } });
+    
+    return result;
+}
+
+const update = async (id, userData) => {
+    const { name, cpf, phoneNumber, email } = userData;
+    const result = await User.update({
+        name,
+        cpf,
+        phoneNumber,
+        email
+    }, { where: { id } });
+    
+    return result;
+}
+
+const destroy = async (id) => {
+    const result = await User.destroy({ where: { id } });
     
     return result;
 }
@@ -28,5 +44,7 @@ const getOne = async (id) => {
 module.exports = {
     get,
     post,
-    getOne
+    getOne,
+    update,
+    destroy
 }

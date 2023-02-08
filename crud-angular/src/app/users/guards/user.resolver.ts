@@ -16,6 +16,6 @@ export class UserResolver implements Resolve<User> {
     if (route.params && route.params['id']) {
       return this.service.loadById(route.params['id']);
     }
-    return of({ id: '', name: '', cpf: '', phoneNumber: '', email: '' });
+    return of({ id: 0, name: '', cpf: '', phoneNumber: '', email: '' });
   }
 }
