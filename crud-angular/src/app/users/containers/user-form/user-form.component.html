@@ -1,38 +1,40 @@
 <mat-card>
-  <mat-toolbar color="primary">
-    Create user
-  </mat-toolbar>
+   <div class="main-form">
+    <img class="img" src="../../../../assets/bg.jpg" alt="">
+    <div class="form">
+      <mat-card-content>
+        <form [formGroup]="form" class="min-width">
+          <mat-form-field class="full-width">
+            <mat-label style="color: #999999;">Name</mat-label>
+            <input matInput placeholder="Your name" formControlName="name" #name>
+            <mat-hint align="end">{{name.value?.length || 0 }} / 100</mat-hint>
+            <mat-error *ngIf="form.get('name')?.invalid">{{ getErrorMessage('name') }}</mat-error>
+          </mat-form-field>
 
-  <mat-card-content>
-    <form [formGroup]="form" class="min-width">
-      <mat-form-field class="full-width">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Your name" formControlName="name" #name>
-        <mat-hint align="end">{{name.value?.length || 0 }} / 100</mat-hint>
-        <mat-error *ngIf="form.get('name')?.invalid">{{ getErrorMessage('name') }}</mat-error>
-      </mat-form-field>
+          <mat-form-field class="full-width input">
+            <mat-label style="color: #999999;">CPF</mat-label>
+            <input matInput placeholder="xxx.xxx.xxx-xx" formControlName="cpf">
+            <mat-error *ngIf="form.get('cpf')?.invalid">{{ getErrorMessage('cpf') }}</mat-error>
+          </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <mat-label>CPF</mat-label>
-        <input matInput placeholder="xxx.xxx.xxx-xx" formControlName="cpf">
-        <mat-error *ngIf="form.get('cpf')?.invalid">{{ getErrorMessage('cpf') }}</mat-error>
-      </mat-form-field>
+          <mat-form-field class="full-width input">
+            <mat-label style="color: #999999;">Phone Number</mat-label>
+            <input matInput placeholder="(xx) xxxxx-xxxx" formControlName="phoneNumber">
+            <mat-error *ngIf="form.get('phoneNumber')?.invalid">{{ getErrorMessage('phoneNumber') }}</mat-error>
+          </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <mat-label>Phone Number</mat-label>
-        <input matInput placeholder="(xx) xxxxx-xxxx" formControlName="phoneNumber">
-        <mat-error *ngIf="form.get('phoneNumber')?.invalid">{{ getErrorMessage('phoneNumber') }}</mat-error>
-      </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label style="color: #999999;">Email</mat-label>
+            <input matInput placeholder="user@email.com" formControlName="email">
+            <mat-error *ngIf="form.get('email')?.invalid">{{ getErrorMessage('email') }}</mat-error>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
 
-      <mat-form-field class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="user@email.com" formControlName="email">
-        <mat-error *ngIf="form.get('email')?.invalid">{{ getErrorMessage('email') }}</mat-error>
-      </mat-form-field>
-    </form>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
-    <button mat-raised-button (click)="onCancel()">Cancel</button>
-  </mat-card-actions>
+      <mat-card-actions>
+        <button mat-raised-button (click)="onSubmit()" class="button-save" [disabled]="!form.valid">Save</button>
+        <button mat-raised-button (click)="onCancel()" class="button-cancel">Cancel</button>
+      </mat-card-actions>
+    </div>
+  </div>
 </mat-card>

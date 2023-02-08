@@ -5,10 +5,59 @@ mat-card {
 }
 
 .full-width {
-  width: 100%;
+  width: 80%;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .min-width {
   width: 100%;
   min-width: 150px;
+}
+
+.input-form {
+  background-color: #efeeed;
+  border-radius: 8px;
+  border: 1px solid #dbdbdb;
+}
+
+.input-form:focus {
+  background-color: #dddddd;
+}
+
+.button-save {
+  background-color: #40c8f4;
+  color: #ffffff;
+  width: 35%;
+  border-radius: 30px;
+}
+
+.button-cancel {
+  border-radius: 30px;
+  // background-color: rgb(255, 94, 0);
+  border: 1px solid #dbdbdb;
+}
+
+.button-save:hover {
+  opacity: 70%;
+}
+
+.button-cancel:hover {
+  opacity: 70%;
+}
+
+.img {
+  width: 50%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.main-form {
+  display: flex;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
 }

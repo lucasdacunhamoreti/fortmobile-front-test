@@ -50,9 +50,6 @@ export class UserFormComponent implements OnInit {
 
   getErrorMessage(fieldName: string) {
     const field = this.form.get(fieldName);
-    // console.log(field);
-
-    // console.log(field);
 
     if (field.hasError('required')) {
       return 'Required field';
