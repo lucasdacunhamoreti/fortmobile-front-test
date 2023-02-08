@@ -1,6 +1,4 @@
 # Aplicação para gerenciamento de usuários
-> Aplicação de carteira digital feita com React e Redux.
-</br>
 
 ## 💻 Projeto
 
