@@ -19,9 +19,10 @@ Este projeto tem a função de cadastrar usuários com seus respectivos dados co
 ## ⬇️ Executando a aplicação
 
 > OBS: É necessário ter o docker e o docker-compose instalado na máquina.
-> As portas 3001, 4200 e 3306 devem estar disponíveis.
 >
 >> O arquivo docker-compose irá instalar as dependências da aplicação e inicializar tanto o frontend quanto o backend.
+>
+>> As portas 3001(backend), 4200(frontend) e 3306(banco de dados) devem estar disponíveis. Para acessar a aplicação basta utilizar: http://localhost:4200
 
 ```bash
 docker-compose up -d
